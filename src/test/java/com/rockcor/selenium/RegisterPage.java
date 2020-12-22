@@ -28,11 +28,6 @@ public class RegisterPage extends Base{
 	private final static By LOCATOR_REGISTER_SUBMIT_BTN = By.name("submit");
 	private final static By LOCATOR_REGISTER_MESSAGE_SUCCESS = By.tagName("font");
 	
-	private final static By LOCATOR_HOME = By.linkText("Home");
-	private final static By LOCATOR_LOGIN_USER = By.name("userName");
-	private final static By LOCATOR_LOGIN_PASSWORD = By.name("password");
-	private final static By LOCATOR_LOGIN_BTN = By.name("submit");
-	
 	private final static String USERNAME = "qualityAdmin123!=";
 	private final static String PASSWORD = "qualityAdmin123!=";
 	
