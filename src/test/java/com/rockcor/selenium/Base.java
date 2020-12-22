@@ -8,7 +8,18 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+/**
+ * Aisla el código de los comandos de Selenium Web Driver
+ * @author ricardodelgadocarreno
+ */
 public class Base implements WebDriver{
+	
+	// SeleniumWrapper
+	// UtilityClass
+	
+	//Page object model con selenium web driver
+	
+	private final static String val = "";
 	
 	private WebDriver driver;
 
