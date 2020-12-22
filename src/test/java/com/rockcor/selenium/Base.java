@@ -49,6 +49,31 @@ public class Base implements WebDriver{
 		driver = new ChromeDriver();
 		return driver;
 	}
+	
+	public String getText(WebElement element) {
+		return element.getText();
+	}
+	
+	public String getText(By locator) {
+		return driver.findElement(locator).getText();
+	}
+	
+	public void sendKeys(String inputText, By locator) {
+		driver.findElement(locator).sendKeys(inputText);
+	}
+	
+	public void click(By locator) {
+		driver.findElement(locator).click();
+	}
+	
+	public boolean isDisplayed(By locator) {
+		try {
+			return driver.findElement(locator).isDisplayed();
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
 
 	public void get() {
 		driver.get(URL);
@@ -70,7 +95,7 @@ public class Base implements WebDriver{
 	public List<WebElement> findElements(By locator) {
 		return driver.findElements(locator);
 	}
-
+	
 	public WebElement findElement(By locator) {
 		return driver.findElement(locator);
 	}
