@@ -16,7 +16,7 @@ public class LoginPage extends Base{
 
 	public LoginPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
+
 	}
 	
 	
