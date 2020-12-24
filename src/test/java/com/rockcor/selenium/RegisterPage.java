@@ -38,7 +38,7 @@ public class RegisterPage extends Base{
 	
 	public void registeredUser() throws InterruptedException {
 		click(LOCATOR_REGISTER_LINK);
-		sleep(2000);
+		implicitlyWait(2000);
 		
 		if(isDisplayed(LOCATOR_REGISTER_PAGE_FOUND)) {
 			sendKeys(USERNAME, LOCATOR_REGISTER_EMAIL);

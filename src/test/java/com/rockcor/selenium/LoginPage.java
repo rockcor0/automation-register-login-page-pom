@@ -1,7 +1,13 @@
 package com.rockcor.selenium;
 
+
+import static org.junit.Assert.assertEquals;
+
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class LoginPage extends Base{
 	
@@ -9,6 +15,8 @@ public class LoginPage extends Base{
 	private final static By LOCATOR_LOGIN_USER = By.name("userName");
 	private final static By LOCATOR_LOGIN_PASSWORD = By.name("password");
 	private final static By LOCATOR_LOGIN_BTN = By.name("submit");
+	private final static By LOCATOR_REGISTER_MESSAGE_SUCCESS = By.tagName("font");
+
 	
 	private final static String USERNAME = "qualityAdmin123!=";
 	private final static String PASSWORD = "qualityAdmin123!=";
@@ -21,15 +29,23 @@ public class LoginPage extends Base{
 	public void loginUser() {
 		click(LOCATOR_HOME);
 		
-		sleep(1000);
+		implicitlyWait(1000);
 		
 		sendKeys(USERNAME, LOCATOR_LOGIN_USER);
 		sendKeys(PASSWORD, LOCATOR_LOGIN_PASSWORD);
 		click(LOCATOR_LOGIN_BTN);
 		
-		sleep(1000);
+		implicitlyWait(1000);
 		
+		List<WebElement> fonts = findElements(LOCATOR_REGISTER_MESSAGE_SUCCESS);
 		
+		for(WebElement item : fonts) {
+			System.out.println(fonts.indexOf(item) + " - " + item);
+		}
+		
+		String result = "Thank you for Loggin.";
+		
+		assertEquals(fonts.get(3).getText(), result);
 	}
 	
 

@@ -58,7 +58,7 @@ public class Base implements WebDriver{
 		}
 	}
 	
-	public void sleep(long time) {
+	public void implicitlyWait(long time) {
 		
 		driver.manage().timeouts().implicitlyWait(time, TimeUnit.MILLISECONDS);
 
