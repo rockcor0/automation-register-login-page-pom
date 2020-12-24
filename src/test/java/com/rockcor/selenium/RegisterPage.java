@@ -34,7 +34,6 @@ public class RegisterPage extends Base{
 
 	public RegisterPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
 	}
 	
 	public void registeredUser() throws InterruptedException {

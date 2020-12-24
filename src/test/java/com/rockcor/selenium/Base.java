@@ -2,6 +2,7 @@ package com.rockcor.selenium;
 
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -57,8 +58,10 @@ public class Base implements WebDriver{
 		}
 	}
 	
-	public void sleep(long time) throws InterruptedException {
-		Thread.sleep(time);
+	public void sleep(long time) {
+		
+		driver.manage().timeouts().implicitlyWait(time, TimeUnit.MILLISECONDS);
+
 	}
 	
 	public void get(String url) {

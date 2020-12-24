@@ -16,9 +16,21 @@ public class LoginPage extends Base{
 
 	public LoginPage(WebDriver driver) {
 		super(driver);
-
 	}
 	
+	public void loginUser() {
+		click(LOCATOR_HOME);
+		
+		sleep(1000);
+		
+		sendKeys(USERNAME, LOCATOR_LOGIN_USER);
+		sendKeys(PASSWORD, LOCATOR_LOGIN_PASSWORD);
+		click(LOCATOR_LOGIN_BTN);
+		
+		sleep(1000);
+		
+		
+	}
 	
 
 }
