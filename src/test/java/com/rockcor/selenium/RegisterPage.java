@@ -17,6 +17,9 @@ import org.openqa.selenium.WebElement;
  */
 public class RegisterPage extends Base{
 	
+	/**
+	 * Constants with locators
+	 */
 	private final static String URL = "http://demo.guru99.com/test/newtours/";
 	private final static By LOCATOR_REGISTER_LINK = By.linkText("REGISTER");
 	private final static By LOCATOR_REGISTER_XPATH = By.xpath("//a[@data-target='#modalUserLogin']");
@@ -31,11 +34,18 @@ public class RegisterPage extends Base{
 	private final static String USERNAME = "qualityAdmin123!=";
 	private final static String PASSWORD = "qualityAdmin123!=";
 	
-
+	/**
+	 * Constructor class
+	 * @param driver
+	 */
 	public RegisterPage(WebDriver driver) {
 		super(driver);
 	}
 	
+	/**
+	 * Register a user
+	 * @throws InterruptedException
+	 */
 	public void registeredUser() throws InterruptedException {
 		click(LOCATOR_REGISTER_LINK);
 		implicitlyWait(2000);
@@ -45,16 +55,6 @@ public class RegisterPage extends Base{
 			sendKeys(PASSWORD, LOCATOR_REGISTER_PASS);
 			sendKeys(PASSWORD, LOCATOR_REGISTER_PASS);
 			click(LOCATOR_REGISTER_SUBMIT_BTN);
-			
-			List<WebElement> fonts = findElements(LOCATOR_REGISTER_MESSAGE_SUCCESS);
-			
-			String resultS = "Note: Your user name is " + USERNAME + ".";
-			
-			for (WebElement webElement : fonts) {
-				System.out.println(fonts.indexOf(webElement) + " - " + webElement.getText());
-			}
-			
-			assertEquals(resultS, fonts.get(5).getText());
 
 		}
 		else {
@@ -63,8 +63,21 @@ public class RegisterPage extends Base{
 		
 	}
 	
-	public boolean success() {
-		return true;
+	/**
+	 * Message when user is registered
+	 * @return
+	 */
+	public String registerMessage() {
+		
+		List<WebElement> fonts = findElements(LOCATOR_REGISTER_MESSAGE_SUCCESS);
+		
+		String resultS = "Note: Your user name is " + USERNAME + ".";
+		
+		for (WebElement webElement : fonts) {
+			System.out.println(fonts.indexOf(webElement) + " - " + webElement.getText());
+		}
+		
+		return getText(fonts.get(5));
 	}
 
 }

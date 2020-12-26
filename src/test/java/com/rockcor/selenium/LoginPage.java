@@ -21,12 +21,19 @@ public class LoginPage extends Base{
 	private final static String USERNAME = "qualityAdmin123!=";
 	private final static String PASSWORD = "qualityAdmin123!=";
 	
+	public final static String SING_IN_MESSAGE = "Thank you for Loggin.";
+	
 
 	public LoginPage(WebDriver driver) {
 		super(driver);
 	}
 	
 	public void loginUser() {
+		
+		if( isHomePageDisplayerd() ) {
+			
+		}
+		
 		click(LOCATOR_HOME);
 		
 		implicitlyWait(1000);
@@ -48,5 +55,23 @@ public class LoginPage extends Base{
 		assertEquals(fonts.get(3).getText(), result);
 	}
 	
+	public boolean isHomePageDisplayerd() {
+		return true;
+	}
+	
+	public String signInMessage() {
+		
+List<WebElement> fonts = findElements(LOCATOR_REGISTER_MESSAGE_SUCCESS);
+		
+		for(WebElement item : fonts) {
+			System.out.println(fonts.indexOf(item) + " - " + item);
+		}
+		
+		//String result = "Thank you for Loggin.";
+		//assertEquals(fonts.get(3).getText(), result);
+		
+		return getText(fonts.get(3));
+		
+	}
 
 }
