@@ -34,6 +34,9 @@ public class RegisterPage extends Base{
 	private final static String USERNAME = "qualityAdmin123!=";
 	private final static String PASSWORD = "qualityAdmin123!=";
 	
+	public final static String REGISTER_SUCCESS_MESSAGE = "Note: Your user name is " + USERNAME + ".";
+
+	
 	/**
 	 * Constructor class
 	 * @param driver
@@ -53,14 +56,13 @@ public class RegisterPage extends Base{
 		if(isDisplayed(LOCATOR_REGISTER_PAGE_FOUND)) {
 			sendKeys(USERNAME, LOCATOR_REGISTER_EMAIL);
 			sendKeys(PASSWORD, LOCATOR_REGISTER_PASS);
-			sendKeys(PASSWORD, LOCATOR_REGISTER_PASS);
+			sendKeys(PASSWORD, LOCATOR_REGISTER_PASS_CONF);
 			click(LOCATOR_REGISTER_SUBMIT_BTN);
 
 		}
 		else {
 			System.out.print("Register page was not found");
-		}
-		
+		}	
 	}
 	
 	/**

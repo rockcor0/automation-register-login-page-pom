@@ -21,7 +21,7 @@ public class LoginPage extends Base{
 	private final static String USERNAME = "qualityAdmin123!=";
 	private final static String PASSWORD = "qualityAdmin123!=";
 
-	public final static String SING_IN_MESSAGE = "Thank you for Loggin.";
+	public final static String SING_IN_SUCCESS_MESSAGE = "Thank you for Loggin.";
 
 
 	public LoginPage(WebDriver driver) {

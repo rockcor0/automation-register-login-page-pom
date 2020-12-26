@@ -68,7 +68,6 @@ public class Base implements WebDriver{
 		driver.get(url);
 	}
 	
-
 	public String getCurrentUrl() {
 		return driver.getCurrentUrl();
 	}
